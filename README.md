@@ -1,6 +1,6 @@
-# Լաբորատոր Աշխատանքներ - C# / OOP
+# Լաբորատոր Աշխատանքներ - Solution 'MidTerm1Lab1'
 
-### 1. **Class, Random, matrix, set get, private public, constructor**
+### 1. **Matrix**
 **Խնդրի դրվածքը:**
 * Ստեղծել Կլասս որը կպարունակի NxN չափերով մատրիցա
 * Կլասսում պահել private դաշտեր N, A և B, ամբողջ թվերի համար, և նրանց համար ապահովել {set get} մեթոդները կարճ գրելաձևով,
@@ -11,9 +11,8 @@
 * Ցույց տալ կլասսի ֆունկիոնալությունը Main() մեթոդում
 
 **Կատարած առաջադրանքը:**
-[Անցնել դեպի կոդի ֆայլը](./CreateMatrix.cs) կամ տեսնել ստորև՝
 ```csharp
-// CreateMatrix.cs
+// Matrix/CreateMatrix.cs
 using System;
 
 namespace MatrixProgram
@@ -77,7 +76,7 @@ namespace MatrixProgram
 
 ---
 
-### 2. **Method overloading, default parameters**
+### 2. **Overloading**
 **Խնդրի դրվածքը:**
 * Ստեղծել static ToMultiplicate մեթոդը, 3 օրինակով, որը կնդունի x, N փոփոխականները
 * N-ը կունենեա ըստ լռելյայն (default) արժեք 2, կլինի int տիպի
@@ -87,7 +86,7 @@ namespace MatrixProgram
 
 **Կատարած առաջադրանքը:**
 ```csharp
-// Program.cs (Overloading Namespace)
+// Overloading/Program.cs
 using System;
 
 namespace Overloading
@@ -107,9 +106,9 @@ namespace Overloading
         {
             Console.OutputEncoding = System.Text.Encoding.UTF8;
 
-            Console.WriteLine(ToMultiplicate(2, 3));      // int: 6
-            Console.WriteLine(ToMultiplicate(3.2, 4));    // double: 12.8
-            Console.WriteLine(ToMultiplicate("A", 3));    // string: AAA
+            Console.Write(ToMultiplicate(2, 3) + "\n");
+            Console.WriteLine(ToMultiplicate(3.2, 4) + "\n");
+            Console.WriteLine(ToMultiplicate("A", 3));
         }
     }
 }
@@ -117,7 +116,7 @@ namespace Overloading
 
 ---
 
-### 3. **Classes, Enums, Formatting and Console Input Parsing**
+### 3. **Formatting**
 **Խնդրի դրվածքը:**
 * Ստեղծել Movie.cs կլասսը որը կպարունակի [ֆիլմի համարը, ֆիլմի անունը, տարեթիվը, ֆիլմի ժանրը, դիտումների քանակը, լայքերի քանակը]
 * Ֆիլմի ժանրի համար ստեղծել enum 5 տարբերակ պարունակող, ըստ ձեր հայեցողությամբ
@@ -134,7 +133,7 @@ namespace Overloading
 
 **Կատարած առաջադրանքը:**
 ```csharp
-// Movie.cs
+// Formatting/Movie.cs
 using System;
 
 namespace Movie
@@ -166,9 +165,43 @@ namespace Movie
 }
 ```
 
+```csharp
+// Formatting/Program.cs
+using System;
+using System.Collections.Generic;
+
+namespace Movie
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.OutputEncoding = System.Text.Encoding.UTF8;
+
+            List<Movie> movieList = new List<Movie>();
+
+            // Կարող եք օգտագործել կոդի մեջ ձեռքով (Hardcode) ավելացնելու տարբերակը թեստավորման համար.
+            movieList.Add(new Movie(1, "Inception", 2010, Movie.MovieGenre.SciFi, 100000, 85000));
+            movieList.Add(new Movie(2, "Shrek", 2001, Movie.MovieGenre.Comedy, 50000, 45000));
+            movieList.Add(new Movie(3, "The Dark Knight", 2008, Movie.MovieGenre.Action, 150000, 140000));
+
+            Console.WriteLine(new string('-', 55));
+            Console.WriteLine(\$"{"Համար", 4} {"Անվանում", -15} {"Տարի", -8} {"Ժանր", -12} {"Ռեյտինգ", 8}");
+            Console.WriteLine(new string('-', 55));
+
+            foreach (var movie in movieList)
+            {
+                Console.WriteLine(movie);
+            }
+            Console.WriteLine(new string('-', 55));
+        }
+    }
+}
+```
+
 ---
 
-### 4. **Using in, out, ref, params, and parameters by default values**
+### 4. **InOutRef**
 **Խնդրի դրվածքը:**
 * Ստեղծել static A(), B(), C() մեթոդները, համապատասխանաբար in, out, ref, մոդֆիկատորները փորձարկելու համար
 * Ստեղծել նաև SumValues(params … ) մեթոդը որը կգումարի մուտքում եկած ամբողջ թվերը, թվերի քանակը ֆիքսված չէ
@@ -176,7 +209,7 @@ namespace Movie
 
 **Կատարած առաջադրանքը:**
 ```csharp
-// Program.cs (Modifiers Namespace)
+// InOutRef/Program.cs
 using System;
 
 namespace ModifiersProgram
