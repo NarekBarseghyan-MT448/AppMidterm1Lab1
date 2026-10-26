@@ -1,0 +1,8 @@
+C:\Users\Narek\source\repos\MidTerm1Lab1\InOutRef\bin\Debug\InOutRef.exe.config
+C:\Users\Narek\source\repos\MidTerm1Lab1\InOutRef\bin\Debug\InOutRef.exe
+C:\Users\Narek\source\repos\MidTerm1Lab1\InOutRef\bin\Debug\InOutRef.pdb
+C:\Users\Narek\source\repos\MidTerm1Lab1\InOutRef\obj\Debug\InOutRef.csproj.AssemblyReference.cache
+C:\Users\Narek\source\repos\MidTerm1Lab1\InOutRef\obj\Debug\InOutRef.csproj.SuggestedBindingRedirects.cache
+C:\Users\Narek\source\repos\MidTerm1Lab1\InOutRef\obj\Debug\InOutRef.csproj.CoreCompileInputs.cache
+C:\Users\Narek\source\repos\MidTerm1Lab1\InOutRef\obj\Debug\InOutRef.exe
+C:\Users\Narek\source\repos\MidTerm1Lab1\InOutRef\obj\Debug\InOutRef.pdb

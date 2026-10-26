@@ -1,0 +1,8 @@
+C:\Users\Narek\source\repos\MidTerm1Lab1\MidTerm1Lab1\bin\Debug\MidTerm1Lab1.exe.config
+C:\Users\Narek\source\repos\MidTerm1Lab1\MidTerm1Lab1\bin\Debug\MidTerm1Lab1.exe
+C:\Users\Narek\source\repos\MidTerm1Lab1\MidTerm1Lab1\bin\Debug\MidTerm1Lab1.pdb
+C:\Users\Narek\source\repos\MidTerm1Lab1\MidTerm1Lab1\obj\Debug\Matrix.csproj.AssemblyReference.cache
+C:\Users\Narek\source\repos\MidTerm1Lab1\MidTerm1Lab1\obj\Debug\Matrix.csproj.SuggestedBindingRedirects.cache
+C:\Users\Narek\source\repos\MidTerm1Lab1\MidTerm1Lab1\obj\Debug\Matrix.csproj.CoreCompileInputs.cache
+C:\Users\Narek\source\repos\MidTerm1Lab1\MidTerm1Lab1\obj\Debug\MidTerm1Lab1.exe
+C:\Users\Narek\source\repos\MidTerm1Lab1\MidTerm1Lab1\obj\Debug\MidTerm1Lab1.pdb

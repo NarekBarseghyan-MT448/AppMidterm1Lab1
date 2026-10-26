@@ -1,0 +1,8 @@
+C:\Users\Narek\source\repos\MidTerm1Lab1\Formatting\bin\Debug\Formatting.exe.config
+C:\Users\Narek\source\repos\MidTerm1Lab1\Formatting\bin\Debug\Formatting.exe
+C:\Users\Narek\source\repos\MidTerm1Lab1\Formatting\bin\Debug\Formatting.pdb
+C:\Users\Narek\source\repos\MidTerm1Lab1\Formatting\obj\Debug\Formatting.csproj.AssemblyReference.cache
+C:\Users\Narek\source\repos\MidTerm1Lab1\Formatting\obj\Debug\Formatting.csproj.SuggestedBindingRedirects.cache
+C:\Users\Narek\source\repos\MidTerm1Lab1\Formatting\obj\Debug\Formatting.csproj.CoreCompileInputs.cache
+C:\Users\Narek\source\repos\MidTerm1Lab1\Formatting\obj\Debug\Formatting.exe
+C:\Users\Narek\source\repos\MidTerm1Lab1\Formatting\obj\Debug\Formatting.pdb
