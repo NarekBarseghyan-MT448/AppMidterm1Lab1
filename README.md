@@ -12,26 +12,28 @@
 
 **Կատարած առաջադրանքը:**
 ```csharp
-// Matrix/CreateMatrix.cs
+//
 using System;
-
-namespace MatrixProgram
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using MatrixProgram;
+namespace creatematrix
 {
-    public class CreateMatrix
+    internal class CreateMatrix
     {
         private int[,] matrix;
-
         public int N { get; set; }
         public int A { get; set; }
         public int B { get; set; }
-
         public CreateMatrix(int n, int a, int b)
         {
             N = n;
             A = a;
             B = b;
-            matrix = new int[N, N];
-            FillMatrix();
+            matrix = new int[N, N]; 
+            FillMatrix();           
         }
 
         private void FillMatrix()
@@ -41,11 +43,10 @@ namespace MatrixProgram
             {
                 for (int j = 0; j < N; j++)
                 {
-                    matrix[i, j] = rand.Next(A, B + 1);
+                    matrix[i, j] = rand.Next(A,B+1);
                 }
             }
         }
-
         public void ShowMatrix()
         {
             for (int i = 0; i < N; i++)
@@ -57,7 +58,6 @@ namespace MatrixProgram
                 Console.WriteLine();
             }
         }
-
         public int GetOddNumbersCount()
         {
             int count = 0;
@@ -65,15 +65,41 @@ namespace MatrixProgram
             {
                 for (int j = 0; j < N; j++)
                 {
-                    if (matrix[i, j] % 2 != 0) count++;
+                    if (matrix[i, j] % 2 != 0){
+                        count++;
+                    }
                 }
             }
             return count;
         }
     }
 }
-```
 
+```
+```csharp
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using creatematrix;
+namespace MatrixProgram
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            CreateMatrix myMatrix = new CreateMatrix(4, 1, 20);
+            Console.OutputEncoding = System.Text.Encoding.UTF8;
+            Console.WriteLine("Ստեղծված մատրիցան՝");
+            myMatrix.ShowMatrix();
+            int odds = myMatrix.GetOddNumbersCount();
+            Console.WriteLine($"\nԿենտ թվերի քանակը մատրիցայում՝ {odds}");
+            Console.ReadLine();
+        }
+    }
+}
+```
 ---
 
 ### 2. **Overloading**
@@ -86,8 +112,11 @@ namespace MatrixProgram
 
 **Կատարած առաջադրանքը:**
 ```csharp
-// Overloading/Program.cs
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Overloading
 {
@@ -101,17 +130,15 @@ namespace Overloading
             for (int i = 0; i < N; i++) result += x;
             return result;
         }
-
         static void Main(string[] args)
         {
-            Console.OutputEncoding = System.Text.Encoding.UTF8;
-
             Console.Write(ToMultiplicate(2, 3) + "\n");
             Console.WriteLine(ToMultiplicate(3.2, 4) + "\n");
-            Console.WriteLine(ToMultiplicate("A", 3));
+            Console.WriteLine(ToMultiplicate("A",3));
         }
     }
 }
+
 ```
 
 ---
@@ -133,44 +160,62 @@ namespace Overloading
 
 **Կատարած առաջադրանքը:**
 ```csharp
-// Formatting/Movie.cs
 using System;
-
-namespace Movie
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Formatting;
+namespace movie
 {
-    public class Movie
+    internal class Movie
     {
-        public enum MovieGenre { Action = 1, Comedy, Drama, Horror, SciFi }
-
+        public enum MovieGenre
+        {
+            Action = 1,
+            Comedy,
+            Drama,
+            Horror,
+            SciFi
+        }
         public int Id { get; set; }
         public string Title { get; set; }
         public int Year { get; set; }
         public MovieGenre Genre { get; set; }
         public int Views { get; set; }
         public int Likes { get; set; }
-
-        public Movie(int id, string title, int year, MovieGenre genre, int views, int likes)
+        public Movie(int id, string title, int year, MovieGenre genre,int views,int likes)
         {
-            Id = id; Title = title; Year = year; Genre = genre; Views = views; Likes = likes;
+            Id = id;
+            Title= title;
+            Year = year;
+            Genre = genre;
+            Views = views;
+            Likes = likes;
         }
-
-        public double GetRating() => Views == 0 ? 0 : Math.Sqrt((double)(Likes * Likes) / Views);
+        public double GetRating()
+        {
+            if (Views == 0) return 0;
+            return Math.Sqrt((double)(Likes * Likes) / Views);
+        }
 
         public override string ToString()
         {
-            string yearInBrackets = \$"({Year})";
-            return \$"{Id,4} {Title,-15} {yearInBrackets,-8} {Genre,-12} {GetRating(),8:F3}";
+            string yearInBrackets = $"({Year})";
+            return $"{Id,4} {Title,-15} {yearInBrackets,-8} {Genre,-12} {GetRating(),8:F3}";
         }
     }
 }
 ```
 
 ```csharp
-// Formatting/Program.cs
 using System;
 using System.Collections.Generic;
-
-namespace Movie
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using movie;
+namespace Formatting
 {
     internal class Program
     {
@@ -179,13 +224,14 @@ namespace Movie
             Console.OutputEncoding = System.Text.Encoding.UTF8;
 
             List<Movie> movieList = new List<Movie>();
-
             movieList.Add(new Movie(1, "Inception", 2010, Movie.MovieGenre.SciFi, 100000, 85000));
             movieList.Add(new Movie(2, "Shrek", 2001, Movie.MovieGenre.Comedy, 50000, 45000));
             movieList.Add(new Movie(3, "The Dark Knight", 2008, Movie.MovieGenre.Action, 150000, 140000));
+            movieList.Add(new Movie(4, "Interstellar", 2014, Movie.MovieGenre.SciFi, 120000, 95000));
+            movieList.Add(new Movie(5, "The Conjuring", 2013, Movie.MovieGenre.Horror, 40000, 25000));
 
             Console.WriteLine(new string('-', 55));
-            Console.WriteLine(\$"{"Համար", 4} {"Անվանում", -15} {"Տարի", -8} {"Ժանր", -12} {"Ռեյտինգ", 8}");
+            Console.WriteLine($"{"Համար",4} {"Անվանում",-15} {"Տարի",-8} {"Ժանր",-12} {"Ռեյտինգ",8}");
             Console.WriteLine(new string('-', 55));
 
             foreach (var movie in movieList)
@@ -193,9 +239,12 @@ namespace Movie
                 Console.WriteLine(movie);
             }
             Console.WriteLine(new string('-', 55));
+
+            Console.ReadLine(); 
         }
     }
 }
+
 ```
 
 ---
@@ -208,21 +257,41 @@ namespace Movie
 
 **Կատարած առաջադրանքը:**
 ```csharp
-// InOutRef/Program.cs
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace ModifiersProgram
+namespace InOutRef
 {
     internal class Program
     {
-        public static void A(in int number) => Console.WriteLine(\$"in: {number}");
-        public static void B(out int result) => result = 100;
-        public static void C(ref int number) => number *= 2;
-        
+        public static void A(in int number)
+        {
+            Console.WriteLine($"Մեթոդ A (in): Թիվը միայն կարդացվում է -> {number}");
+        }
+
+        public static void B(out int result)
+        {
+            result = 100;
+            Console.WriteLine($"Մեթոդ B (out): Արժեքը սահմանվեց մեթոդի ներսում -> {result}");
+        }
+
+        public static void C(ref int number)
+        {
+            Console.WriteLine($"Մեթոդ C (ref) սկզբում: Ստացված արժեքը -> {number}");
+            number = number * 2; 
+            Console.WriteLine($"Մեթոդ C (ref) վերջում: Փոփոխված արժեքը -> {number}");
+        }
+
         public static int SumValues(params int[] numbers)
         {
             int sum = 0;
-            foreach (int num in numbers) sum += num;
+            foreach (int num in numbers)
+            {
+                sum += num;
+            }
             return sum;
         }
 
@@ -230,12 +299,35 @@ namespace ModifiersProgram
         {
             Console.OutputEncoding = System.Text.Encoding.UTF8;
 
-            int valIn = 25; A(valIn);
-            int valOut; B(out valOut);
-            int valRef = 10; C(ref valRef);
+            int myInValue = 25;
+            A(myInValue); 
 
-            Console.WriteLine(\$"SumValues(1,2,3) -> {SumValues(1, 2, 3)}");
+            Console.WriteLine(new string('-', 40));
+
+            int myOutValue; 
+            B(out myOutValue); 
+            Console.WriteLine($"Main-ում B-ից հետո myOutValue = {myOutValue}");
+
+            Console.WriteLine(new string('-', 40));
+
+            int myRefValue = 10;
+            Console.WriteLine($"Main-ում C-ից առաջ myRefValue = {myRefValue}");
+            C(ref myRefValue); 
+            Console.WriteLine($"Main-ում C-ից հետո myRefValue = {myRefValue} (Արժեքը փոխվեց)");
+
+            Console.WriteLine(new string('-', 40));
+
+            int sum1 = SumValues(1, 2, 3); 
+            int sum2 = SumValues(5, 10, 15, 20, 25); 
+            int sum3 = SumValues(); 
+
+            Console.WriteLine($"SumValues(1, 2, 3) -> {sum1}");
+            Console.WriteLine($"SumValues(5, 10, 15, 20, 25) -> {sum2}");
+            Console.WriteLine($"SumValues() դատարկ -> {sum3}");
+
+            Console.ReadLine();
         }
     }
 }
+
 ```
