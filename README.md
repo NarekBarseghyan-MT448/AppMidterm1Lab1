@@ -180,7 +180,6 @@ namespace Movie
 
             List<Movie> movieList = new List<Movie>();
 
-            // Կարող եք օգտագործել կոդի մեջ ձեռքով (Hardcode) ավելացնելու տարբերակը թեստավորման համար.
             movieList.Add(new Movie(1, "Inception", 2010, Movie.MovieGenre.SciFi, 100000, 85000));
             movieList.Add(new Movie(2, "Shrek", 2001, Movie.MovieGenre.Comedy, 50000, 45000));
             movieList.Add(new Movie(3, "The Dark Knight", 2008, Movie.MovieGenre.Action, 150000, 140000));
